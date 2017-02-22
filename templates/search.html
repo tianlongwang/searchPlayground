@@ -1,0 +1,28 @@
+<link rel="stylesheet" href="/static/style.css" type="text/css">
+{% block body %}
+ 
+<form action="/result" method="POST">
+	<div class="login">
+		<div class="login-screen">
+			<div class="app-title">
+				<h1>Seach here</h1>
+			</div>
+ 
+			<div class="login-form">
+				<div class="control-group">
+				<input type="text" class="login-field" value="" placeholder="Enter your query here..." name="query">
+				<label class="login-field-icon fui-user" for="login-name"></label>
+				</div>
+ 
+                <input type="submit" value="search" class="btn btn-primary btn-large btn-block" >
+			    <br>
+			</div>
+		</div>
+	</div>
+</form>
+
+<h2> Or select a test query from the list below </h2>
+{% for qq in test_queries %}
+<p><a href="{{ url_for('render_test_query', test_query=qq)}}">{{qq}}</a></p>
+{% endfor %} 
+{% endblock %}

@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="/static/style.css" type="text/css">
+{% block body %}
+<h1>Query: {{ query }} </h1>
+<div style="width: 100%; overflow: hidden;">
+    <div style="width: 600px; float: left;"> 
+		<h4>My search</h4>
+		{{my| safe}} 
+	</div>
+    <div style="margin-left: 600px;"> 
+		<h4>Current Search</h4>
+			{{current | safe}} 
+		</div>
+</div>
+
+{% endblock %}
